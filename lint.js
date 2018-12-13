@@ -58,25 +58,34 @@ result.then(({ data }) => {
 
   const apiCalls = []
   octokit.pulls.get({ owner, repo, number }).then(({ data }) => {
-    const commit_id = data.head.sha;
-    Object.keys(comments).forEach(path => {
-      Object.keys(comments[path]).forEach(position => {
-        apiCalls.push({ owner, repo, number, body: comments[path][position].join(' '), commit_id, path, position });
-      });
-    });
+    octokit.pulls.listComments({ owner, repo, number }).then(response => {
+      const listCommentsData = response.data;
 
-    function create() {
-      if (apiCalls.length) {
-        const comment = apiCalls.pop();
-        console.log('creating comment', comment);
-        octokit.pulls.createComment(comment).then(() => {
-          setTimeout(create, 1000);
-        }).catch(e => {
-          console.log('error', e);
-        })
+      const commit_id = data.head.sha;
+      Object.keys(comments).forEach(path => {
+        Object.keys(comments[path]).forEach(position => {
+          const existingComment = listCommentsData.find(c => c.path == path && c.position == position);
+          if (!existingComment) {
+            apiCalls.push({ owner, repo, number, body: comments[path][position].join(' '), commit_id, path, position });
+          }
+        });
+      });
+
+      function create() {
+        if (apiCalls.length) {
+          const comment = apiCalls.pop();
+          console.log('creating comment', comment);
+          octokit.pulls.createComment(comment).then(() => {
+            setTimeout(create, 1000);
+          }).catch(e => {
+            console.log('error', e);
+          })
+        }
       }
-    }
-    create();
+      create();
+
+
+    });
 
   });
 
