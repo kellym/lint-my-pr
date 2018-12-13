@@ -64,18 +64,21 @@ result.then(({ data }) => {
         apiCalls.push({ owner, repo, number, body: comments[path][position].join(' '), commit_id, path, position });
       });
     });
+
+    function create() {
+      if (apiCalls.length) {
+        const comment = apiCalls.pop();
+        console.log('creating comment', comment);
+        octokit.pulls.createComment(comment).then(() => {
+          setTimeout(create, 1000);
+        }).catch(e => {
+          console.log('error', e);
+        })
+      }
+    }
+    create();
+
   });
 
-  function create() {
-    if (apiCalls.length) {
-      const comment = apiCalls.pop();
-      octokit.pulls.createComment(comment).then(() => {
-        setTimeout(create, 1000);
-      }).catch(e => {
-        console.log('error', e);
-      })
-    }
-  }
-
-});
+  });
 
