@@ -21,8 +21,6 @@
     "eol-last": [ "warn" ],
     "no-useless-constructor": [ "warn" ],
     "no-useless-escape": "off",
-    "no-unused-vars": [ "warn" ],
-    "vue/max-attributes-per-line": [ "warn", { "singleline": 3, "multiline": 1 } ],
-    "vue/html-self-closing": [ "warn", { "html": { "normal" : "never", "component": "never" }, "svg": "never", "math": "never" } ]
+    "no-unused-vars": [ "warn" ]
   }
 }
