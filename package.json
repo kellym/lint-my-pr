@@ -1,6 +1,6 @@
 {
   "name": "lint-my-pr",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Add comments to your PR where there are linting issues.",
   "main": "lib/linter.js",
   "scripts": {
