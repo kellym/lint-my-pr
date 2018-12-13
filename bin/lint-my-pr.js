@@ -6,6 +6,11 @@ const { argv } = require('yargs'),
 const { slug, pr, dry, token, config } = argv,
       [owner, repo] = slug.split('/');
 
+process.on('unhandledRejection', error => {
+  console.log('unhandledRejection', error);
+  process.exit(1);
+});
+
 const linter = new Linter({
   owner,
   repo,
