@@ -8,4 +8,4 @@ jobs:
   include:
     - stage: linting
       if: type = pull_request
-      script: node ./bin/lint-my-pr.js --slug=${TRAVIS_PULL_REQUEST_BRANCH} --pr=${TRAVIS_PULL_REQUEST}
+      script: node ./bin/lint-my-pr.js --slug=${TRAVIS_PULL_REQUEST_SLUG} --pr=${TRAVIS_PULL_REQUEST}

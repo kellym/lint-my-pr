@@ -17,5 +17,7 @@ const linter = new Linter({
 
 linter.run().then(() => {
   console.log(`${ linter.errorCount } error(s), ${ linter.createdCommentCount } comment(s) created`);
+  if (linter.errorCount) process.exit(1);
+  else process.exit();
 });
 
