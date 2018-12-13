@@ -43,6 +43,7 @@ result.then(({ data }) => {
       errors[file.to].forEach(({ line, message }) => {
         let position = 1;
         file.chunks.forEach(chunk => {
+          console.log(chunk);
           if (line >= chunk.newStart && line <= (chunk.newStart + chunk.newLines)) {
             const errorPosition = position + (line - chunk.newStart);
             fileErrors[errorPosition] = fileErrors[errorPosition] || [];
@@ -82,7 +83,7 @@ result.then(({ data }) => {
           })
         }
       }
-      create();
+      //create();
 
 
     });
