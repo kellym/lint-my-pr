@@ -19,7 +19,7 @@
     "url": "https://github.com/kellym/lint-my-pr/issues"
   },
   "homepage": "https://github.com/kellym/lint-my-pr#readme",
-  "devDependencies": {
+  "dependencies": {
     "@octokit/rest": "^16.2.0",
     "async": "^2.6.1",
     "debug": "^4.1.0",
