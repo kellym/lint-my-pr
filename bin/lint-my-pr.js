@@ -3,7 +3,7 @@
 const { argv } = require('yargs'),
       Linter   = require('../lib/linter.js');
 
-const { slug, pr, dry, token, config } = argv,
+const { slug, pr, dry, token, config, path } = argv,
       [owner, repo] = slug.split('/');
 
 process.on('unhandledRejection', error => {
@@ -17,7 +17,8 @@ const linter = new Linter({
   pr,
   dry,
   token,
-  config
+  config,
+  path
 });
 
 linter.run().then(() => {
