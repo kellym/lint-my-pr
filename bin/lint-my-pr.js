@@ -21,8 +21,8 @@ const linter = new Linter({
 });
 
 linter.run().then(() => {
-  console.log(`${ linter.errorCount } error(s), ${ linter.createdCommentCount } comment(s) created`);
-  if (linter.errorCount) process.exit(1);
+  console.log(`${ linter.errorCount } error(s), ${ linter.errorCountForPR } error(s) from this PR. ${ linter.createdCommentCount } comment(s) created`);
+  if (linter.errorCountForPR) process.exit(1);
   else process.exit();
 });
 
