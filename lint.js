@@ -15,8 +15,10 @@ const number = pr;
 const [owner, repo] = slug.split('/');
 
 const errors = {};
-let errorCount = 0;
 const comments = {};
+
+let errorCount = 0,
+    commentsCreatedCount = 0;
 
 const cli = new CLIEngine({
   useEslintrc: true
@@ -78,7 +80,7 @@ octokit.pulls.get({
     }
   });
 
-  const apiCalls = []
+  const apiCalls = [];
   // get the PR again in regular format
   octokit.pulls.get({ owner, repo, number }).then(({ data }) => {
     // we need the latest commit so our comments are tracked
@@ -103,10 +105,13 @@ octokit.pulls.get({
           const comment = apiCalls.pop();
           debug(`Creating comment: ${JSON.stringify(comment)}`);
           octokit.pulls.createComment(comment).then(() => {
+            commentsCreatedCount++;
             setTimeout(create, 1000);
           }).catch(e => {
             debug(`Error creating comment: ${JSON.stringify(e)}`);
-          })
+          });
+        } else {
+          console.log(`${ errorCount } error(s), ${ commentsCreatedCount } comment(s) created`);
         }
       }
       // now actually go through and create comments at a rate of 1 per second
