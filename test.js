@@ -1,7 +1,7 @@
 const hello = 'hello there';
-const another = {value:1};
+const another = {value:1}
 
-console.log(hello)
+console.log(hello);
 
 const testVar = 'unused'
 

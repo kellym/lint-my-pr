@@ -1,0 +1,24 @@
+{
+  "name": "lint-my-pr",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lint.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kellym/lint-my-pr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kellym/lint-my-pr/issues"
+  },
+  "homepage": "https://github.com/kellym/lint-my-pr#readme",
+  "devDependencies": {
+    "@octokit/rest": "^16.2.0",
+    "eslint": "^5.10.0",
+    "parse-diff": "^0.5.1"
+  }
+}
