@@ -1,7 +1,7 @@
 {
   "name": "lint-my-pr",
   "version": "0.0.1",
-  "description": "",
+  "description": "Add comments to your PR where there are linting issues.",
   "main": "lib/linter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/kellym/lint-my-pr.git"
   },
-  "author": "",
+  "author": "Kelly Martin <kellymartinv@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kellym/lint-my-pr/issues"
