@@ -2,12 +2,12 @@
   "name": "lint-my-pr",
   "version": "0.0.1",
   "description": "",
-  "main": "lint.js",
+  "main": "lib/linter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "lint-my-pr": "./lint.js"
+    "lint-my-pr": "./bin/lint.js"
   },
   "repository": {
     "type": "git",
