@@ -7,23 +7,24 @@
     "document": true,
     "window": true
   },
-  "rules": {
-    "indent": [ "warn", 2, { "SwitchCase": 1, "VariableDeclarator": {"var": 2, "let": 2, "const": 3} } ],
-    "one-var-declaration-per-line": [ "warn" ],
-    "comma-spacing": [ "warn", { "before": false, "after": true } ],
-    "array-bracket-spacing": [ "warn" ],
-    "space-before-blocks": [ "warn" ],
-    "linebreak-style": [ "warn", "unix" ],
-    "quotes": [ "warn", "single", { "avoidEscape": true } ],
-    "semi": [ "warn" ],
-    "no-console": 0,
-    "object-curly-spacing": [ "warn", "always" ],
-    "eol-last": [ "warn" ],
-    "no-useless-constructor": [ "warn" ],
-    "no-useless-escape": "off",
-    "no-unused-vars": [ "warn" ]
-  },
   "overrides": {
-    "excludedFiles": "fixtures/*.js",
+    "files": ["**/*.js"],
+    "excludedFiles": "test/fixtures/*.js",
+    "rules": {
+      "indent": [ "warn", 2, { "SwitchCase": 1, "VariableDeclarator": {"var": 2, "let": 2, "const": 3} } ],
+      "one-var-declaration-per-line": [ "warn" ],
+      "comma-spacing": [ "warn", { "before": false, "after": true } ],
+      "array-bracket-spacing": [ "warn" ],
+      "space-before-blocks": [ "warn" ],
+      "linebreak-style": [ "warn", "unix" ],
+      "quotes": [ "warn", "single", { "avoidEscape": true } ],
+      "semi": [ "warn" ],
+      "no-console": 0,
+      "object-curly-spacing": [ "warn", "always" ],
+      "eol-last": [ "warn" ],
+      "no-useless-constructor": [ "warn" ],
+      "no-useless-escape": "off",
+      "no-unused-vars": [ "warn" ]
+    }
   }
 }
