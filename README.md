@@ -1,7 +1,7 @@
 # Lint My PR
 
 This automates the process of linting pull requests and adds comments to the lines with problems.  There are other
-linters available for Travis, but none of them create comments to mark problem lines.
+linters available for Travis, but none of them create comments to mark problem lines, and others require way too much configuration.
 
 Setup is simple.
 
