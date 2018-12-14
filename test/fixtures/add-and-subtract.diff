@@ -1,0 +1,13 @@
+diff --git a/test/fixtures/add-and-subtract.js b/test/fixtures/add-and-subtract.js
+index 627c742..aecb13b 100644
+--- a/test/fixtures/add-and-subtract.js
++++ b/test/fixtures/add-and-subtract.js
+@@ -1,6 +1,6 @@
+ const daysOfSun = 250,
+-      foods = ['tzatziki','feta','gyros'],
+-      islands = { inhabited: 170, total: 2000}
++      islands = { inhabited: 170, total: 2000},
++      weddingEvents = ['plate-throwing','dancing' ];
+ 
+ function getFactAboutCountry(fact) {
+   switch(fact) {
