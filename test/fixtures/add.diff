@@ -1,0 +1,20 @@
+diff --git a/test/fixtures/add.js b/test/fixtures/add.js
+index e69de29..627c742 100644
+--- a/test/fixtures/add.js
++++ b/test/fixtures/add.js
+@@ -0,0 +1,15 @@
++const daysOfSun = 250,
++      foods = ['tzatziki','feta','gyros'],
++      islands = { inhabited: 170, total: 2000}
++
++function getFactAboutCountry(fact) {
++  switch(fact) {
++    case 'food':
++      return foods[1];
++    case 'islands':
++      return islands.inhabited
++    default:
++      return "These are fun facts!";
++  }
++}
++

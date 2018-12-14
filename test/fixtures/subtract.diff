@@ -1,0 +1,13 @@
+diff --git a/test/fixtures/subtract.js b/test/fixtures/subtract.js
+index 627c742..b55b61c 100644
+--- a/test/fixtures/subtract.js
++++ b/test/fixtures/subtract.js
+@@ -6,8 +6,6 @@ function getFactAboutCountry(fact) {
+   switch(fact) {
+     case 'food':
+       return foods[1];
+-    case 'islands':
+-      return islands.inhabited
+     default:
+       return "These are fun facts!";
+   }
