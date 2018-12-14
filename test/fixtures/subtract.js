@@ -6,8 +6,6 @@ function getFactAboutCountry(fact) {
   switch(fact) {
     case 'food':
       return foods[1];
-    case 'islands':
-      return islands.inhabited
     default:
       return "These are fun facts!";
   }
