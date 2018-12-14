@@ -26,5 +26,8 @@
     "eslint": "^5.10.0",
     "parse-diff": "^0.5.1",
     "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "tape": "^4.9.1"
   }
 }
