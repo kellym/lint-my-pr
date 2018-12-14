@@ -96,6 +96,26 @@ test('Linter', t => {
       t.end();
     });
 
+    test('diff with multiple chunks', t => {
+      const file = 'test/fixtures/multiple-chunks';
+      setup();
+      const addDiff = fs.readFileSync(path.resolve(`./${file}.diff`), 'utf8');
+      linter.diff = parse(addDiff);
+      linter.path = `./${file}.js`;
+      linter.setup();
+      linter.lint();
+      linter.compileComments();
+      const comments = linter.fileComments[`${file}.js`];
+      t.deepLooseEqual(comments, {
+        13: ['A space is required before \'}\'.'],
+        14: [
+          'A space is required after \',\'.',
+          'There should be no space before \']\'.'
+        ],
+        28: ['Missing semicolon.']
+      }, 'correctly assigns positions after multiple chunks');
+      t.end();
+    });
 
     t.end();
 

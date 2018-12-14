@@ -1,0 +1,36 @@
+diff --git a/test/fixtures/multiple-chunks.js b/test/fixtures/multiple-chunks.js
+index aaa3ea2..8e440eb 100644
+--- a/test/fixtures/multiple-chunks.js
++++ b/test/fixtures/multiple-chunks.js
+@@ -1,15 +1,6 @@
+ const daysOfSun = 250,
+-      foods = ['tzatziki','feta','gyros'],
+-      islands = { inhabited: 170, total: 2000}
+-
+-
+-
+-
+-
+-
+-
+-
+-
++      islands = { inhabited: 170, total: 2000},
++      weddingEvents = ['plate-throwing','dancing' ];
+
+
+
+@@ -30,9 +21,11 @@ const daysOfSun = 250,
+ function getFactAboutCountry(fact) {
+   switch(fact) {
+     case 'food':
+-      return foods[1];
++      return foods[0];
+     case 'islands':
+-      return islands.inhabited
++      return islands.total;
++    case 'wedding':
++      return weddingEvents[0]
+     default:
+       return "These are fun facts!";
+   }
